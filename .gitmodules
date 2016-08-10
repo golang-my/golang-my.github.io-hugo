@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:golang-my/golang-my.github.io.git
+	branch = master
