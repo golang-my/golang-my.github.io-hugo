@@ -2,3 +2,7 @@
 	path = public
 	url = git@github.com:golang-my/golang-my.github.io.git
 	branch = master
+[submodule "themes/academic"]
+	path = themes/academic
+	url = https://github.com/gcushen/hugo-academic.git
+	branch = master

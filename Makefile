@@ -7,11 +7,11 @@ build:
 	hugo -t academic
 	hugo --buildDrafts
 	hugo
-deps:
-	git clone https://github.com/gcushen/hugo-academic.git themes/academic
 merge:
 	git fetch origin
 	git merge -S origin/master
+
 # for rebuild, ignore this
-prepare: deps
+prepare:
+	git submodule add -b master  https://github.com/gcushen/hugo-academic.git themes/academic
 	git submodule add -b master git@github.com:golang-my/golang-my.github.io.git public
