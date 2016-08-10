@@ -5,9 +5,8 @@ all: merge build
 	git push
 build:
 	git submodule update
-	hugo -t academic
 	hugo --buildDrafts
-	hugo
+	hugo -t academic
 merge:
 	git fetch origin
 	git merge -S origin/master
