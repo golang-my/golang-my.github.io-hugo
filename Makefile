@@ -2,6 +2,7 @@ all: merge build
 	git add -A
 	git commit -S -m "rebuilding site `date`"
 	git push
+	cd public && git add -A && git commit -S -m "rebuilding site `date`" && git push
 build:
 	git submodule update
 	hugo -t academic
