@@ -78,7 +78,7 @@ theme = "academic"
 
 [[menu.main]]
   name = "Posts"
-  url = "/post/"
+  url = "post/"
   weight = 3
 
 [[menu.main]]
@@ -88,5 +88,5 @@ theme = "academic"
 
 [[menu.main]]
   name = "Contributing"
-  url = "/post/contrib-howto/"
+  url = "post/contrib-howto/"
   weight = 9

@@ -1,4 +1,4 @@
-all: update build
+all: build
 	./deploy.sh
 
 build:
