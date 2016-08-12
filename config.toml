@@ -33,9 +33,6 @@ theme = "academic"
   custom_css = []
   custom_js  = []
 
-  # Biography section.
-  # Section will only be displayed if `content/home/about.md` exists.
-
   # Posts section.
   # Section will only be displayed if there are posts in `content/post/`.
   [params.posts]
@@ -81,10 +78,15 @@ theme = "academic"
 
 [[menu.main]]
   name = "Posts"
-  url = "#posts"
+  url = "/post/"
   weight = 3
 
 [[menu.main]]
   name = "Meetups"
   url = "#projects"
   weight = 4
+
+[[menu.main]]
+  name = "Contributing"
+  url = "/post/contrib-howto/"
+  weight = 9

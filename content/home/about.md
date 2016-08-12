@@ -18,6 +18,6 @@ We're trying to host a meetup at least once a month on the last Tuesday.
 
 Anybody can contribute to this site. Just check out and submit us your pull request.
 
-The repository is at [https://github.com/golang-my/golang-my.github.io-hugo].
+The repository is at https://github.com/golang-my/golang-my.github.io-hugo.
 
-* *Tutorial coming soon*
+[How to contribute](/post/contrib-howto/).
