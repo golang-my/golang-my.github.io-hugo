@@ -7,7 +7,7 @@ tags = ["howto", "tutorial", "hugo"]
 title = "How to contribute"
 +++
 
-Author: [Chee Leong](https://github.com/klrkdekira)
+By [Chee Leong](https://github.com/klrkdekira)
 
 ## Installation
 

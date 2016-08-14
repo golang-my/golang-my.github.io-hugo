@@ -5,7 +5,7 @@ image = ""
 image_preview = ""
 summary = "We're still undecided which day to have our meetup."
 tags = []
-title = "Poll for August's meetup"
+title = "Poll for 2016 August's meetup"
 external_link = "https://www.facebook.com/groups/mygolang/permalink/505187613011024/"
 
 +++
