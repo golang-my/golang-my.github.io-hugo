@@ -55,7 +55,7 @@ Now, we made sure all goroutine executed before exit.
 
 Even though the current code looks good enough, `fmt.Println` is actually a io operation.
 
-Once the write buffer is big enough, the output will be contaminated, ie part of line 1 will have fragment of line 3.
+If the write buffer is big enough, you will notice the output is contaminated, ie part of line 1 will have fragment of line 3.
 
 To avoid undesirable side effect, we'll apply multiplexing.
 
@@ -82,7 +82,7 @@ The changes for this implement might be a bit drastic
 
 {{< gist klrkdekira 6edb0a66a618532b9c411f388fed7b42  >}}
 
-[Playground Link](https://play.golang.org/p/z0ak0vaHXE))
+[Playground Link](https://play.golang.org/p/z0ak0vaHXE)
 
 As you can see, the last part is declared first, aka in our example the `printWorker` and `outputChan`.
 
