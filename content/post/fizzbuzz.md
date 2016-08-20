@@ -1,7 +1,7 @@
 +++
 date = "2016-08-13T10:42:53+08:00"
 image = ""
-title = "Go routine and channel explained with fizzbuzz"
+title = "Multiplexing fizzbuzz"
 draft = false
 math = false
 tags = ["golang", "channel", "routine", "fizzbuzz"]
