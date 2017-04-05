@@ -24,13 +24,14 @@ The repository is at https://github.com/golang-my/golang-my.github.io-hugo.
 
 ### Telegram Group
 
-Use this link to invite others join this channel: https://t.me/joinchat/AAAAAD_0LOtBImDV8gn0jA
-There's a channel dedicated to answer questions for those new to Go: https://t.me/joinchat/AAAAAEF5prptfwTvnEhZng
+Join our telegram group [Golang Malaysia](https://t.me/joinchat/AAAAAD_0LOtBImDV8gn0jA) for discussions and latest updates on the meetups.
+
+For those new to Go, get your questions answered here at [Belajar Golang](https://t.me/joinchat/AAAAAEF5prptfwTvnEhZng). You can share snippets of your codes through [Golang Playground](https://play.golang.org) and get feedback from other helpful members.
 
 
 ### Youtube Channel
 
-Yes we have our own Youtube channel! You can find it [here](https://www.youtube.com/channel/UC3Kays3nseIbtGLoaonEbkA).
+If you miss our monthly meetup, fret not. We have it recorded in our official [Youtube Channel](https://www.youtube.com/channel/UC3Kays3nseIbtGLoaonEbkA). Subscribe to our channel for the latest updates.
 
 ### Meetup
 
