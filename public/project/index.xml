@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Golang Malaysia</title>
+    <link>https://golang.my/project/</link>
+    <description>Recent content in Projects on Golang Malaysia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
+    <lastBuildDate>Wed, 05 Apr 2017 18:12:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://golang.my/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meetup April 2017</title>
+      <link>https://golang.my/project/meetup-april-2017/</link>
+      <pubDate>Wed, 05 Apr 2017 18:12:07 +0800</pubDate>
+      
+      <guid>https://golang.my/project/meetup-april-2017/</guid>
+      <description>The next meetup will be at Seek Asia! Featuring session, Erik Dubbelboer will demonstrate how to create simple REST API using Golang.
+RSVP here</description>
+    </item>
+    
+    <item>
+      <title>Meetup October 2016</title>
+      <link>https://golang.my/project/meetup-october-2016/</link>
+      <pubDate>Tue, 18 Oct 2016 09:06:48 +0800</pubDate>
+      
+      <guid>https://golang.my/project/meetup-october-2016/</guid>
+      <description>After a month of hiatus, we&amp;rsquo;re back again! Join us and meet fellow gophers at 25th October 2016.
+RSVP here</description>
+    </item>
+    
+    <item>
+      <title>Meetup August 2016</title>
+      <link>https://golang.my/project/meetup-august-2016/</link>
+      <pubDate>Sun, 14 Aug 2016 21:06:48 +0800</pubDate>
+      
+      <guid>https://golang.my/project/meetup-august-2016/</guid>
+      <description>The meetup falls on 30th August 2016. Come join us for a go-ful 2016 Merdeka Eve celebration.
+RSVP here</description>
+    </item>
+    
+    <item>
+      <title>Poll for 2016 August&#39;s meetup</title>
+      <link>https://golang.my/project/meetup-august-2016-poll/</link>
+      <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://golang.my/project/meetup-august-2016-poll/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

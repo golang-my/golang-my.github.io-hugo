@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Golang Malaysia</title>
+    <link>https://golang.my/tags/hugo/</link>
+    <description>Recent content in Hugo on Golang Malaysia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
+    <lastBuildDate>Fri, 12 Aug 2016 11:05:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://golang.my/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to contribute</title>
+      <link>https://golang.my/post/contrib-howto/</link>
+      <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
+      
+      <guid>https://golang.my/post/contrib-howto/</guid>
+      <description>By Chee Leong
+Installation  Install Hugo or if you have Golang setup,
+go get -u -v github.com/spf13/hugo  Clone the project repository.
+If you&amp;rsquo;ve obtained permission to write to the repository.
+git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.
+I prefer the fork method. :)
+ You can start this to preview the site. Any changes you made will be reflected.</description>
+    </item>
+    
+  </channel>
+</rss>

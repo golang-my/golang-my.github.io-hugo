@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Golang Malaysia</title>
+    <link>https://golang.my/home/</link>
+    <description>Recent content in Homes on Golang Malaysia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://golang.my/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>about</title>
+      <link>https://golang.my/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://golang.my/home/about/</guid>
+      <description>Welcome Most discussions are happening on the Facebook Group. The intention of this site is to collect knowledge sharing via blog posts.
+Current Agenda We&amp;rsquo;re trying to host a meetup at least once a month on the last Tuesday.
+Community driven Anybody can contribute to this site. Just check out and submit us your pull request.
+The repository is at https://github.com/golang-my/golang-my.github.io-hugo.
+How to contribute.
+Telegram Group Join our telegram group Golang Malaysia for discussions and latest updates on the meetups.</description>
+    </item>
+    
+  </channel>
+</rss>

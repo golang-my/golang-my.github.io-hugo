@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fizzbuzz on Golang Malaysia</title>
+    <link>https://golang.my/tags/fizzbuzz/</link>
+    <description>Recent content in Fizzbuzz on Golang Malaysia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
+    <lastBuildDate>Sat, 13 Aug 2016 10:42:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://golang.my/tags/fizzbuzz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multiplexing fizzbuzz</title>
+      <link>https://golang.my/post/fizzbuzz/</link>
+      <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
+      
+      <guid>https://golang.my/post/fizzbuzz/</guid>
+      <description>By Chee Leong
+I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.
+Definition Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;quot;fizz&amp;quot;, and any number divisible by five with the word &amp;quot;buzz&amp;quot;.  Attention! Go Playground operation is single threaded hence output is always in order of the input.</description>
+    </item>
+    
+  </channel>
+</rss>

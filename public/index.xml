@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang Malaysia</title>
+    <link>https://golang.my/</link>
+    <description>Recent content on Golang Malaysia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
+    <lastBuildDate>Wed, 05 Apr 2017 18:12:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://golang.my/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meetup April 2017</title>
+      <link>https://golang.my/project/meetup-april-2017/</link>
+      <pubDate>Wed, 05 Apr 2017 18:12:07 +0800</pubDate>
+      
+      <guid>https://golang.my/project/meetup-april-2017/</guid>
+      <description>The next meetup will be at Seek Asia! Featuring session, Erik Dubbelboer will demonstrate how to create simple REST API using Golang.
+RSVP here</description>
+    </item>
+    
+    <item>
+      <title>Meetup October 2016</title>
+      <link>https://golang.my/project/meetup-october-2016/</link>
+      <pubDate>Tue, 18 Oct 2016 09:06:48 +0800</pubDate>
+      
+      <guid>https://golang.my/project/meetup-october-2016/</guid>
+      <description>After a month of hiatus, we&amp;rsquo;re back again! Join us and meet fellow gophers at 25th October 2016.
+RSVP here</description>
+    </item>
+    
+    <item>
+      <title>Easy round robin with net/http</title>
+      <link>https://golang.my/post/http_round_robin/</link>
+      <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
+      
+      <guid>https://golang.my/post/http_round_robin/</guid>
+      <description>By Chee Leong
+Introduction Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a net/http.
+I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a Handler interface.
+And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.
+Basic So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.</description>
+    </item>
+    
+    <item>
+      <title>Meetup August 2016</title>
+      <link>https://golang.my/project/meetup-august-2016/</link>
+      <pubDate>Sun, 14 Aug 2016 21:06:48 +0800</pubDate>
+      
+      <guid>https://golang.my/project/meetup-august-2016/</guid>
+      <description>The meetup falls on 30th August 2016. Come join us for a go-ful 2016 Merdeka Eve celebration.
+RSVP here</description>
+    </item>
+    
+    <item>
+      <title>Multiplexing fizzbuzz</title>
+      <link>https://golang.my/post/fizzbuzz/</link>
+      <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
+      
+      <guid>https://golang.my/post/fizzbuzz/</guid>
+      <description>By Chee Leong
+I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.
+Definition Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;quot;fizz&amp;quot;, and any number divisible by five with the word &amp;quot;buzz&amp;quot;.  Attention! Go Playground operation is single threaded hence output is always in order of the input.</description>
+    </item>
+    
+    <item>
+      <title>How to contribute</title>
+      <link>https://golang.my/post/contrib-howto/</link>
+      <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
+      
+      <guid>https://golang.my/post/contrib-howto/</guid>
+      <description>By Chee Leong
+Installation  Install Hugo or if you have Golang setup,
+go get -u -v github.com/spf13/hugo  Clone the project repository.
+If you&amp;rsquo;ve obtained permission to write to the repository.
+git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.
+I prefer the fork method. :)
+ You can start this to preview the site. Any changes you made will be reflected.</description>
+    </item>
+    
+    <item>
+      <title>Poll for 2016 August&#39;s meetup</title>
+      <link>https://golang.my/project/meetup-august-2016-poll/</link>
+      <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://golang.my/project/meetup-august-2016-poll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>https://golang.my/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://golang.my/home/about/</guid>
+      <description>Welcome Most discussions are happening on the Facebook Group. The intention of this site is to collect knowledge sharing via blog posts.
+Current Agenda We&amp;rsquo;re trying to host a meetup at least once a month on the last Tuesday.
+Community driven Anybody can contribute to this site. Just check out and submit us your pull request.
+The repository is at https://github.com/golang-my/golang-my.github.io-hugo.
+How to contribute.
+Telegram Group Join our telegram group Golang Malaysia for discussions and latest updates on the meetups.</description>
+    </item>
+    
+  </channel>
+</rss>

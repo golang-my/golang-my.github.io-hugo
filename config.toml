@@ -1,8 +1,8 @@
 baseurl = "https://golang.my/"
 title = "Golang Malaysia"
-copyright = "Copyleft 2016 Malaysian Golang User Group"
+copyright = "Copyleft 2017 Malaysian Golang User Group"
 languageCode = "en-us"
-theme = "academic"
+theme = "hugo_theme_beg"
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = "golang-malaysia"
@@ -10,8 +10,13 @@ disqusShortname = "golang-malaysia"
 # Enable analytics by entering your Google Analytics tracking ID
 # googleAnalytics = ""
 
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
 [params]
   name = "Golang Malaysia"
+  organization = "Golang Malaysia"
+
   # role = ""
   # organization = ""
   avatar = "logo.png"
@@ -73,20 +78,23 @@ disqusShortname = "golang-malaysia"
 
 [[menu.main]]
   name = "Home"
-  url = "#top"
+  url = "/home/about"
   weight = 1
 
 [[menu.main]]
   name = "Posts"
-  url = "post/"
+  url = "/post/"
   weight = 3
 
-[[menu.main]]
-  name = "Meetups"
-  url = "#projects"
-  weight = 4
+# [[menu.main]]
+#   name = "Meetups"
+#   url = "/post/meetups"
+#   weight = 4
 
 [[menu.main]]
   name = "Contributing"
-  url = "post/contrib-howto/"
+  url = "/post/contrib-howto/"
   weight = 9
+
+[languages.en]
+  languageCode = "en-us"

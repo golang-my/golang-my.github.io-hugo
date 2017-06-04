@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20-DEV" />
+
+
+
+<link rel="canonical" href="https://golang.my/post/contrib-howto/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>How to contribute - Golang Malaysia</title>
+    
+<meta name="description" content="By Chee LeongInstallation  Install Hugo or if you have Golang setup,go get -u -v github.com/spf13/hugo  Clone the project repository.If you&amp;rsquo;ve obtained permission to write to the repository.git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.I prefer the fork method. :) You can start this to preview the site. Any changes you made will be reflected.">
+
+<meta property="og:title" content="How to contribute - Golang Malaysia">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://golang.my/post/contrib-howto/">
+<meta property="og:image" content="https://golang.my/images/default.png">
+<meta property="og:site_name" content="Golang Malaysia">
+<meta property="og:description" content="By Chee LeongInstallation  Install Hugo or if you have Golang setup,go get -u -v github.com/spf13/hugo  Clone the project repository.If you&amp;rsquo;ve obtained permission to write to the repository.git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.I prefer the fork method. :) You can start this to preview the site. Any changes you made will be reflected.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Golang Malaysia">
+<meta name="twitter:url" content="https://golang.my/post/contrib-howto/">
+<meta name="twitter:title" content="How to contribute - Golang Malaysia">
+<meta name="twitter:description" content="By Chee LeongInstallation  Install Hugo or if you have Golang setup,go get -u -v github.com/spf13/hugo  Clone the project repository.If you&amp;rsquo;ve obtained permission to write to the repository.git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.I prefer the fork method. :) You can start this to preview the site. Any changes you made will be reflected.">
+<meta name="twitter:image" content="https://golang.my/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://golang.my/"
+    },
+    "headline": "How to contribute - Golang Malaysia",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://golang.my/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-08-12T11:05:39JST",
+    "dateModified": "2016-08-12T11:05:39JST",
+    "author": {
+      "@type": "Person",
+      "name": "Golang Malaysia"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Golang Malaysia",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://golang.my/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "By Chee Leong
+Installation  Install Hugo or if you have Golang setup,
+go get -u -v github.com/spf13/hugo  Clone the project repository.
+If you&rsquo;ve obtained permission to write to the repository.
+git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&rsquo;ll have to fork the repository, remember to add --recursive when checkout.
+I prefer the fork method. :)
+ You can start this to preview the site. Any changes you made will be reflected."
+  }
+</script>
+
+
+    <link href="https://golang.my/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://golang.my/">Golang Malaysia</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/home/about">Home</a></li>
+              
+              
+              
+              <li><a href="/post/">Posts</a></li>
+              
+              
+              
+              <li><a href="/post/contrib-howto/">Contributing</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://golang.my/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://golang.my/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">How to contribute</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-08-12T11:05:39JST">Aug 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://golang.my/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">How to contribute</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<p>By <a href="https://github.com/klrkdekira">Chee Leong</a></p>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+<li><p>Install <a href="https://gohugo.io/overview/installing/">Hugo</a> or if you have Golang setup,</p>
+
+<pre><code>go get -u -v github.com/spf13/hugo
+</code></pre></li>
+
+<li><p>Clone the project repository.</p>
+
+<p>If you&rsquo;ve obtained permission to write to the repository.</p>
+
+<pre><code>git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git
+</code></pre>
+
+<p>Else you&rsquo;ll have to fork the repository, remember to add <code>--recursive</code> when checkout.</p>
+
+<p>I prefer the fork method. :)</p></li>
+
+<li><p>You can start this to preview the site. Any changes you made will be reflected.</p>
+
+<pre><code>hugo server
+</code></pre></li>
+
+<li><p>The directory structure, for most the time, you only need to deal with <code>content/post</code> and <code>static</code> (if images are involved).</p>
+
+<p>Here&rsquo;s an output of <code>tree</code>.</p>
+
+<pre><code>$ tree -L 2
+.
+├── config.toml
+├── content
+│   ├── home
+│   ├── post
+│   └── project
+├── deploy.sh
+├── LICENSE
+├── Makefile
+├── public
+├── README.md
+├── static
+│   └── img
+└── themes
+</code></pre></li>
+
+<li><p>To create a new post, we&rsquo;ll be using <code>Hugo</code>&rsquo;s scaffolder.</p>
+
+<pre><code>hugo new post/&lt;title&gt;.md
+</code></pre>
+
+<p>Hugo supports <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a> and also the current theme we&rsquo;re using supports <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX</a>.</p>
+
+<p>To know more, check <a href="#resources">Resources</a>.</p></li>
+
+<li><p>After you did all the editing and is satisfied with the results. Commit your changes, push and send us a pull request.
+We&rsquo;ll do the moderation, merge and site generation.</p>
+
+<p>To check for changes</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>Add files to be committed</p>
+
+<pre><code>git add  &lt;path&gt;
+</code></pre>
+
+<p>Commit and push your changes</p>
+
+<pre><code>git commit
+git push
+</code></pre>
+
+<p>Thank you for your contribution.</p></li>
+</ol>
+
+<h2 id="resources">Resources</h2>
+
+<p>To know more about the toolset and markups.</p>
+
+<ul>
+<li><p><a href="https://gohugo.io/overview/introduction/">Hugo</a></p></li>
+
+<li><p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a></p></li>
+
+<li><p><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX</a></p></li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Please use the <a href="https://github.com/golang-my/golang-my.github.io-hugo/issues">issue tracker</a> to let me know about any bugs or feature requests, or alternatively make a pull request.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p>This blog post is referenced from <a href="https://github.com/gcushen/hugo-academic/blob/master/exampleSite/content/post/getting-started.md">https://github.com/gcushen/hugo-academic/blob/master/exampleSite/content/post/getting-started.md</a></p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://golang.my/tags/howto/">howto</a></li>
+          
+          <li><a href="https://golang.my/tags/tutorial/">tutorial</a></li>
+          
+          <li><a href="https://golang.my/tags/hugo/">hugo</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'golang-malaysia';
+    var disqus_identifier = 'https:\/\/golang.my\/post\/contrib-howto\/';
+    var disqus_title = 'How to contribute';
+    var disqus_url = 'https:\/\/golang.my\/post\/contrib-howto\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://golang.my/project/meetup-april-2017/" class="list-group-item">Meetup April 2017</a>
+      
+      <a href="https://golang.my/project/meetup-october-2016/" class="list-group-item">Meetup October 2016</a>
+      
+      <a href="https://golang.my/post/http_round_robin/" class="list-group-item">Easy round robin with net/http</a>
+      
+      <a href="https://golang.my/project/meetup-august-2016/" class="list-group-item">Meetup August 2016</a>
+      
+      <a href="https://golang.my/post/fizzbuzz/" class="list-group-item">Multiplexing fizzbuzz</a>
+      
+      <a href="https://golang.my/post/contrib-howto/" class="list-group-item">How to contribute</a>
+      
+      <a href="https://golang.my/project/meetup-august-2016-poll/" class="list-group-item">Poll for 2016 August&#39;s meetup</a>
+      
+      <a href="https://golang.my/home/about/" class="list-group-item">about</a>
+      
+      <a href="https://golang.my/categories/" class="list-group-item">Categories</a>
+      
+      <a href="https://golang.my/tags/channel/" class="list-group-item">Channel</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://golang.my/tags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://golang.my/tags/channel" class="list-group-item">channel</a>
+      
+      <a href="https://golang.my/tags/fizzbuzz" class="list-group-item">fizzbuzz</a>
+      
+      <a href="https://golang.my/tags/handler" class="list-group-item">handler</a>
+      
+      <a href="https://golang.my/tags/howto" class="list-group-item">howto</a>
+      
+      <a href="https://golang.my/tags/hugo" class="list-group-item">hugo</a>
+      
+      <a href="https://golang.my/tags/net/http" class="list-group-item">net/http</a>
+      
+      <a href="https://golang.my/tags/roundrobin" class="list-group-item">roundrobin</a>
+      
+      <a href="https://golang.my/tags/routine" class="list-group-item">routine</a>
+      
+      <a href="https://golang.my/tags/tutorial" class="list-group-item">tutorial</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>Copyleft 2017 Malaysian Golang User Group</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
