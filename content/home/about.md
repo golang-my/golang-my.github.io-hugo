@@ -7,7 +7,7 @@ weight = 10
 
 # Welcome
 
-Most discussions are happening on the [Facebook Group](https://www.facebook.com/groups/mygolang/). The intention of this site is to collect knowledge sharing via blog posts.
+Most discussions are happening on the [Telegram Group](https://t.me/golangmalaysia). The intention of this site is to collect knowledge sharing via blog posts.
 
 ### Current Agenda
 
