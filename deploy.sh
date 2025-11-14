@@ -2,6 +2,10 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+# FIXME: Temporary deploy to golang-my.github.io without using git subtree manually
+rsync -avP public/* golang-my.github.io/
+exit
+
 # Go To Public folder
 cd public
 # Add changes to git.
