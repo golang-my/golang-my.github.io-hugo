@@ -1,4 +1,5 @@
 +++
+date = {{ .Date }}
 math = false
 highlight = true
 tags = []

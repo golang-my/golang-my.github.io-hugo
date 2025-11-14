@@ -6,8 +6,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
-    <lastBuildDate>Tue, 23 Aug 2016 19:32:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Nov 2025 12:55:37 +0800</lastBuildDate>
     <atom:link href="https://golang.my/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>https://golang.my/post/stillalive/</link>
+      <pubDate>Fri, 14 Nov 2025 12:55:37 +0800</pubDate>
+      
+      <guid>https://golang.my/post/stillalive/</guid>
+      <description>&lt;p&gt;Insert Still Alive from Portal.&lt;/p&gt;
+&lt;p&gt;Hello, world! We&amp;rsquo;ll probably continue some content to coincide with this year(2025)&amp;rsquo;s &lt;a href=&#34;https://adventofcode.com/&#34;&gt;Advent of Code&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Easy round robin with net/http</title>
