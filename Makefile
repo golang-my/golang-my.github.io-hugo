@@ -6,7 +6,7 @@ build:
 
 # run this for first timer
 deps:
-	go get -u -v github.com/spf13/hugo
+	go install -v github.com/gohugoio/hugo@v0.152.2
 
 # to update the submodules
 update:
@@ -15,5 +15,5 @@ update:
 
 # for rebuild, ignore this
 init:
-	git submodule add -b master  https://github.com/gcushen/hugo-academic.git themes/academic
+	git submodule add -b master https://github.com/gcushen/hugo-academic.git themes/academic
 	git submodule add -b master git@github.com:golang-my/golang-my.github.io.git public

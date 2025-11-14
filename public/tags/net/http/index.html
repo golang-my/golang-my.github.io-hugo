@@ -1,207 +1,201 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20-DEV" />
+<html lang="en-us">
+<head>
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://golang.my/tags/net/http/index.xml">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="author" content="Golang Malaysia">
+  
 
-<link rel="canonical" href="https://golang.my/tags/net/http/">
-
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Net/Http - Golang Malaysia</title>
-    
-    <link href="https://golang.my/css/styles.css" rel="stylesheet">
-  </head>
-
-  <body>
+  
+  
+  
+  
     
     
+    <link rel="stylesheet" href="/css/highlight.min.css">
     
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
 
-    <header class="l-header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://golang.my/">Golang Malaysia</a>
-          </div>
+  
+  <link rel="alternate" href="https://golang.my/tags/net/http/index.xml" type="application/rss+xml" title="Golang Malaysia">
+  <link rel="feed" href="https://golang.my/tags/net/http/index.xml" type="application/rss+xml" title="Golang Malaysia">
+  
 
-          
-          <div id="navbar" class="collapse navbar-collapse">
-            
-            <ul class="nav navbar-nav navbar-right">
-              
-              
-              <li><a href="/home/about">Home</a></li>
-              
-              
-              
-              <li><a href="/post/">Posts</a></li>
-              
-              
-              
-              <li><a href="/post/contrib-howto/">Contributing</a></li>
-              
-              
-            </ul>
-            
-          </div>
-          
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-        </div>
-      </nav>
-    </header>
+  <link rel="canonical" href="https://golang.my/tags/net/http/">
 
-    <main>
-      <div class="container">
+  
+
+  <title>Net/Http | Golang Malaysia</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Golang Malaysia</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
         
-<div class="row">
-  <div class="col-md-8">
 
-    
-    <header class="page-header">
-      <h1>Net/Http</h1>
-    </header>
-    
+        
 
-    <ul class="p-articles">
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-08-23T19:32:34JST">Aug 23, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://golang.my/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="https://golang.my/post/http_round_robin/">Easy round robin with net/http</a></h2>
-  </header>
+        <li class="nav-item">
+          <a href="/#top">
+            
+            <span>Home</span>
+          </a>
+        </li>
 
-  
-  <div class="summary">By Chee Leong
-Introduction Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a net/http.
-I&rsquo;m going to show you how to do a simple round robin HTTP server with Golang&rsquo;s Duck Typing a.k.a Handler interface.
-And because Golang Playground doesn&rsquo;t work well with HTTP server, I&rsquo;m not going to provide the link, so you have to download the script and run it yourself.
-Basic So, let&rsquo;s start with the boilerplate we&rsquo;re going to use for the rest of the guide.</div>
+        
+        
 
-  <footer>
-    <a href="https://golang.my/post/http_round_robin/" title="Easy round robin with net/http">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-    </ul>
+        
 
-    
+        <li class="nav-item">
+          <a href="/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
 
+        
+        
 
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Meetups</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/post/contrib-howto/">
+            
+            <span>Contributing</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
   </div>
-  <div class="col-md-4">
-    
-<aside class="l-sidebar">
+</nav>
 
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="https://golang.my/project/meetup-april-2017/" class="list-group-item">Meetup April 2017</a>
-      
-      <a href="https://golang.my/project/meetup-october-2016/" class="list-group-item">Meetup October 2016</a>
-      
-      <a href="https://golang.my/post/http_round_robin/" class="list-group-item">Easy round robin with net/http</a>
-      
-      <a href="https://golang.my/project/meetup-august-2016/" class="list-group-item">Meetup August 2016</a>
-      
-      <a href="https://golang.my/post/fizzbuzz/" class="list-group-item">Multiplexing fizzbuzz</a>
-      
-      <a href="https://golang.my/post/contrib-howto/" class="list-group-item">How to contribute</a>
-      
-      <a href="https://golang.my/project/meetup-august-2016-poll/" class="list-group-item">Poll for 2016 August&#39;s meetup</a>
-      
-      <a href="https://golang.my/home/about/" class="list-group-item">about</a>
-      
-      <a href="https://golang.my/categories/" class="list-group-item">Categories</a>
-      
-      <a href="https://golang.my/tags/channel/" class="list-group-item">Channel</a>
-      
-    </div>
-  </section>
+
+
+
+<div class="universal-wrapper">
+
+  <h1>Net/Http</h1>
 
   
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
-    </div>
-    <div class="list-group">
-      
-    </div>
-  </section>
+
   
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">TAG</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="https://golang.my/tags/golang" class="list-group-item">golang</a>
-      
-      <a href="https://golang.my/tags/channel" class="list-group-item">channel</a>
-      
-      <a href="https://golang.my/tags/fizzbuzz" class="list-group-item">fizzbuzz</a>
-      
-      <a href="https://golang.my/tags/handler" class="list-group-item">handler</a>
-      
-      <a href="https://golang.my/tags/howto" class="list-group-item">howto</a>
-      
-      <a href="https://golang.my/tags/hugo" class="list-group-item">hugo</a>
-      
-      <a href="https://golang.my/tags/net/http" class="list-group-item">net/http</a>
-      
-      <a href="https://golang.my/tags/roundrobin" class="list-group-item">roundrobin</a>
-      
-      <a href="https://golang.my/tags/routine" class="list-group-item">routine</a>
-      
-      <a href="https://golang.my/tags/tutorial" class="list-group-item">tutorial</a>
-      
-    </div>
-  </section>
   
-
-</aside>
-
-
+  <div>
+    <h2><a href="https://golang.my/post/http_round_robin/">Easy round robin with net/http</a></h2>
+    <div class="article-style">
+      
+      <p>By <a href="https://github.com/klrkdekira">Chee Leong</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a <a href="https://golang.org/pkg/net/http/">net/http</a>.</p>
+<p>I&rsquo;m going to show you how to do a simple round robin HTTP server with Golang&rsquo;s Duck Typing a.k.a <strong>Handler</strong> interface.</p>
+<p>And because Golang Playground doesn&rsquo;t work well with HTTP server, I&rsquo;m not going to provide the link, so you have to download the script and run it yourself.</p>
+<h2 id="basic">Basic</h2>
+<p>So, let&rsquo;s start with the boilerplate we&rsquo;re going to use for the rest of the guide.</p>
+      
+    </div>
   </div>
+  
+
+  
+
+
 </div>
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
 
-      </div>
-    </main>
+      Copyleft 2017 Malaysian Golang User Group &middot; 
 
-    <footer class="l-footer">
-      <div class="container">
-        <p>Copyleft 2017 Malaysian Golang User Group</p>
-        <aside>
-          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
-          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
-        </aside>
-      </div>
-    </footer>
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
   </body>
 </html>
 

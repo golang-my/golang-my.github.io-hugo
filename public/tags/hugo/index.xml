@@ -1,20 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Golang Malaysia</title>
     <link>https://golang.my/tags/hugo/</link>
     <description>Recent content in Hugo on Golang Malaysia</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Fri, 12 Aug 2016 11:05:39 +0800</lastBuildDate>
-    <atom:link href="https://golang.my/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://golang.my/tags/hugo/" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>How to contribute</title>
       <link>https://golang.my/post/contrib-howto/</link>
       <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
+      
       <guid>https://golang.my/post/contrib-howto/</guid>
-      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Install &lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo&lt;/a&gt; or if you have Golang setup,&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; go get -u -v github.com/spf13/hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Clone the project repository.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve obtained permission to write to the repository.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Else you&amp;rsquo;ll have to fork the repository, remember to add &lt;code&gt;--recursive&lt;/code&gt; when checkout.&lt;/p&gt;&#xA;&lt;p&gt;I prefer the fork method. :)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;You can start this to preview the site. Any changes you made will be reflected.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install &lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo&lt;/a&gt; or if you have Golang setup,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; go get -u -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clone the project repository.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve obtained permission to write to the repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Else you&amp;rsquo;ll have to fork the repository, remember to add &lt;code&gt;--recursive&lt;/code&gt; when checkout.&lt;/p&gt;
+&lt;p&gt;I prefer the fork method. :)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can start this to preview the site. Any changes you made will be reflected.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; hugo server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The directory structure, for most the time, you only need to deal with &lt;code&gt;content/post&lt;/code&gt; and &lt;code&gt;static&lt;/code&gt; (if images are involved).&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an output of &lt;code&gt;tree&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; $ tree -L 2
+ .
+ ├── config.toml
+ ├── content
+ │   ├── home
+ │   ├── post
+ │   └── project
+ ├── deploy.sh
+ ├── LICENSE
+ ├── Makefile
+ ├── public
+ ├── README.md
+ ├── static
+ │   └── img
+ └── themes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To create a new post, we&amp;rsquo;ll be using &lt;code&gt;Hugo&lt;/code&gt;&amp;rsquo;s scaffolder.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; hugo new post/&amp;lt;title&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hugo supports &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;Markdown&lt;/a&gt; and also the current theme we&amp;rsquo;re using supports &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To know more, check &lt;a href=&#34;https://golang.my/post/contrib-howto/#resources&#34;&gt;Resources&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After you did all the editing and is satisfied with the results. Commit your changes, push and send us a pull request.
+We&amp;rsquo;ll do the moderation, merge and site generation.&lt;/p&gt;
+&lt;p&gt;To check for changes&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add files to be committed&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git add  &amp;lt;path&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Commit and push your changes&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git commit
+ git push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thank you for your contribution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;To know more about the toolset and markups.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/golang-my/golang-my.github.io-hugo/issues&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;This blog post is referenced from &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/exampleSite/content/post/getting-started.md&#34;&gt;https://github.com/gcushen/hugo-academic/blob/master/exampleSite/content/post/getting-started.md&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

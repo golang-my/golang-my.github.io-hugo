@@ -1,20 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Channel on Golang Malaysia</title>
     <link>https://golang.my/tags/channel/</link>
     <description>Recent content in Channel on Golang Malaysia</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Sat, 13 Aug 2016 10:42:53 +0800</lastBuildDate>
-    <atom:link href="https://golang.my/tags/channel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://golang.my/tags/channel/" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Multiplexing fizzbuzz</title>
       <link>https://golang.my/post/fizzbuzz/</link>
       <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
+      
       <guid>https://golang.my/post/fizzbuzz/</guid>
-      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;#34;fizz&amp;#34;, and any number divisible by five with the word &amp;#34;buzz&amp;#34;.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Attention!&lt;/strong&gt; Go Playground operation is single threaded hence output is always in order of the input. Try the code out at your computer for multithread goodness.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.&lt;/p&gt;
+&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;#34;fizz&amp;#34;, and any number divisible by five with the word &amp;#34;buzz&amp;#34;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Attention!&lt;/strong&gt; Go Playground operation is single threaded hence output is always in order of the input. Try the code out at your computer for multithread goodness.&lt;/p&gt;
+&lt;h3 id=&#34;basic&#34;&gt;Basic&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the basic example,&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/4e0b1d581488c2c22ca4631e28a11115.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/53kVtkPKCn&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As demonstrated above, each loop contains blocking operation of processing and output.&lt;/p&gt;
+&lt;h3 id=&#34;goroutine&#34;&gt;Goroutine&lt;/h3&gt;
+&lt;p&gt;To start applying goroutine, the inner loop operations are moved to a separate function.&lt;/p&gt;
+&lt;p&gt;To invoke a goroutine, simply append a &lt;code&gt;go&lt;/code&gt; keyword in front of the function call.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/0e49f80c8c92eaead339044375c23c26.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/BXB6Eg9fNn&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, we rely on a blocking &lt;code&gt;Sleep&lt;/code&gt; operation to stall the &lt;code&gt;main&lt;/code&gt; from exiting too early. However this is not good idea because we have no idea how long it takes for each processes to finish running.&lt;/p&gt;
+&lt;h3 id=&#34;synchronization&#34;&gt;Synchronization&lt;/h3&gt;
+&lt;h4 id=&#34;synchronization-via-workgroup&#34;&gt;Synchronization via WorkGroup&lt;/h4&gt;
+&lt;p&gt;Although it is possible to do job waiting with channel, it is recommended to use &lt;a href=&#34;https://golang.org/pkg/sync/#WaitGroup&#34;&gt;WaitGroup&lt;/a&gt;&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/680545cafff3018d4daa6e843dcd27c9.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/9HJOVQhFjz&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now, we made sure all goroutine executed before exit.&lt;/p&gt;
+&lt;p&gt;Even though the current code looks good enough, &lt;code&gt;fmt.Println&lt;/code&gt; is actually a io operation.&lt;/p&gt;
+&lt;p&gt;If the write buffer is big enough, you will notice the output is contaminated, ie part of line 1 will have fragment of line 3.&lt;/p&gt;
+&lt;p&gt;To avoid undesirable side effect, we&amp;rsquo;ll apply multiplexing.&lt;/p&gt;
+&lt;h3 id=&#34;multiplex&#34;&gt;Multiplex&lt;/h3&gt;
+&lt;p&gt;Unfortunately, I won&amp;rsquo;t be covering channel here. For the uninitiated, it is a pipe.&lt;/p&gt;
+&lt;p&gt;Read more about channel here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/channels&#34;&gt;Channel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/channel-buffering&#34;&gt;Channel Buffering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/channel-directions&#34;&gt;Channel Direction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The diagram of multiplexing we&amp;rsquo;re going to apply here&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;     inputChan                | 0 | ouputChan
+main ========&amp;gt; fizzbuzzWorker | 1 | ========&amp;gt; printWorker
+                              | 2 |
+                              | 3 |
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The changes for this implement might be a bit drastic&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/6edb0a66a618532b9c411f388fed7b42.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/z0ak0vaHXE&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, the last part is declared first, aka in our example the &lt;code&gt;printWorker&lt;/code&gt; and &lt;code&gt;outputChan&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is to assure the worker is consuming the piped message as soon as possible.&lt;/p&gt;
+&lt;p&gt;Since &lt;code&gt;printWorker&lt;/code&gt; is only a single process, we&amp;rsquo;ll be using a channel to signal the conclusion of the goroutine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;printWorker&lt;/code&gt; listen to incoming &lt;code&gt;string&lt;/code&gt; message and print them out on the terminal.&lt;/p&gt;
+&lt;p&gt;Then, we starts n (system core) amount of &lt;code&gt;fizzbuzzWorker&lt;/code&gt; goroutine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fizzbuzzWorker&lt;/code&gt; ingests &lt;code&gt;int&lt;/code&gt; input, and ouput &lt;code&gt;string&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, with all the worker set, we start to feed &lt;code&gt;inputChan&lt;/code&gt;. Once it&amp;rsquo;s finished, we closed &lt;code&gt;inputChan&lt;/code&gt; so our &lt;code&gt;fizzbuzzWorker&lt;/code&gt; knows when there&amp;rsquo;s no more job and exit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;, failed to close a channel will result in a deadlock, the best case is the compiler or runtime throws panic immediately, worst case is the program stucked but still run indefinitely.&lt;/p&gt;
+&lt;p&gt;Next, the program waits for all &lt;code&gt;n&lt;/code&gt; of &lt;code&gt;fizzbuzzWorker&lt;/code&gt; to finish their task, then we&amp;rsquo;ll close &lt;code&gt;outputChan&lt;/code&gt; so &lt;code&gt;printWorker&lt;/code&gt; knows when to stop.&lt;/p&gt;
+&lt;p&gt;Once, &lt;code&gt;printWorker&lt;/code&gt; finished its job, the &lt;code&gt;printDone&lt;/code&gt; is signalled and program is now exited happily.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Fizz_buzz&#34;&gt;Fizz buzz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Multiplexing&#34;&gt;Multiplexing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com&#34;&gt;Go by Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

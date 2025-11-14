@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
   {{ with .Site.Params.role }}<meta name="description" content="{{ . }}">{{ end }}
 
@@ -35,8 +35,10 @@
   <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
   {{ end }}
 
-  <link rel="alternate" href="{{ .RSSLink | default .Site.RSSLink  }}" type="application/rss+xml" title="{{ .Site.Title }}">
-  <link rel="feed" href="{{ .RSSLink | default .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
+  {{ with .OutputFormats.Get "rss" }}
+  <link rel="alternate" href="{{ .Permalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
+  <link rel="feed" href="{{ .Permalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
+  {{ end }}
 
   <link rel="icon" type="image/png" href="{{ "/img/icon.png" | relURL }}">
   <link rel="apple-touch-icon" type="image/png" href="{{ "/img/apple-touch-icon.png" | relURL }}">

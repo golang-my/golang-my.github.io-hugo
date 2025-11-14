@@ -1,34 +1,247 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Golang Malaysia</title>
     <link>https://golang.my/post/</link>
     <description>Recent content in Posts on Golang Malaysia</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Tue, 23 Aug 2016 19:32:34 +0800</lastBuildDate>
-    <atom:link href="https://golang.my/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://golang.my/post/" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Easy round robin with net/http</title>
       <link>https://golang.my/post/http_round_robin/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
+      
       <guid>https://golang.my/post/http_round_robin/</guid>
-      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a &lt;a href=&#34;https://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;&#xA;&lt;p&gt;And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;&#xA;&lt;p&gt;So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a &lt;a href=&#34;https://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;
+&lt;p&gt;And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.&lt;/p&gt;
+&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
+&lt;p&gt;So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.&lt;/p&gt;
+&lt;p&gt;We will be creating a program that starts a HTTP server and a client to request the HTTP server, then exit.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/49ee872b2e0c493d6b3d01c641c0f695.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;First, it&amp;rsquo;s very important to know &lt;strong&gt;Server.Handler&lt;/strong&gt; accepts a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;
+&lt;p&gt;So right now we set up a server that respond &lt;strong&gt;Hello, World!&lt;/strong&gt; that runs on &lt;strong&gt;127.0.0.1:9090&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For the following part is just the boilerplate of a HTTP request,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a &lt;strong&gt;Request&lt;/strong&gt; object.&lt;/li&gt;
+&lt;li&gt;Call &lt;strong&gt;Client.Do&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Read the response.&lt;/li&gt;
+&lt;li&gt;Print the response.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Notice I call fatal whenever an error occurs, this is very important.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rule, fail as soon as possible, fail quick and loudly is better than late and silently.&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;custom-handler&#34;&gt;Custom Handler&lt;/h2&gt;
+&lt;p&gt;Now, we&amp;rsquo;re going to create our own &lt;strong&gt;Handler&lt;/strong&gt; so we can perform our tricks later.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/95b4b9ff43659e2de781d552455ec12d.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see, we&amp;rsquo;ve added &lt;strong&gt;RobinHood&lt;/strong&gt;, an empty struct.&lt;/p&gt;
+&lt;p&gt;Since &lt;strong&gt;RobinHood&lt;/strong&gt; implemented ServeHTTP(http.ResponseWriter, *http.Request), it fulfills and qualifies as &lt;strong&gt;Handler&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;basic-load-balancer&#34;&gt;Basic Load Balancer&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s implement our basic round robin &lt;strong&gt;Handler&lt;/strong&gt;&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/188b981402118d8b5c5136c3d08861bc.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see, I&amp;rsquo;ve added several attributes to the &lt;strong&gt;RobinHood&lt;/strong&gt; struct, let&amp;rsquo;s go through&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;counter - keep track of current state to know which handler to call.&lt;/li&gt;
+&lt;li&gt;mu - mutual exclusive lock to maintain integrity of &lt;strong&gt;counter&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;one, two, three - http handler funcs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;ServeHTTP&lt;/strong&gt; for &lt;strong&gt;RobinHood&lt;/strong&gt; is also updated to serve the handler funcs in a round robin manner.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve also put the bootstrapping of &lt;strong&gt;RobinHood&lt;/strong&gt; as the function &lt;strong&gt;newRobinHood&lt;/strong&gt;, just to avoid typing that over and over again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;newHandlerFunc&lt;/strong&gt; is added also to save me from repeating the handler func boilerplate.&lt;/p&gt;
+&lt;p&gt;To demonstrate the working of our basic round robin engine, I&amp;rsquo;m running the the HTTP request in a loop of 5.&lt;/p&gt;
+&lt;p&gt;Run this and you should expect the same output as the included &lt;strong&gt;response.txt&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;chaining-http-handlers&#34;&gt;Chaining HTTP Handlers&lt;/h2&gt;
+&lt;p&gt;Now, instead of hacking and limit ourselves to only 3 handler funcs, we can actually implement a round robin of a list of HTTP Handlers.&lt;/p&gt;
+&lt;p&gt;The changes involved are very small.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/b6899a334466cfc2c81906b0f00a35af.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;I&amp;rsquo;ve removed &lt;strong&gt;one&lt;/strong&gt;, &lt;strong&gt;two&lt;/strong&gt;, &lt;strong&gt;three&lt;/strong&gt;, added &lt;strong&gt;handler&lt;/strong&gt; a slice of &lt;strong&gt;http.Handler&lt;/strong&gt;. Updated the &lt;strong&gt;newRobinHood&lt;/strong&gt; bootstrapper.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;newHandlerFunc&lt;/strong&gt; is also removed and now &lt;strong&gt;newHandler&lt;/strong&gt; is added since we are accepting &lt;strong&gt;Handler&lt;/strong&gt; instead.&lt;/p&gt;
+&lt;p&gt;Now, we are not limited to the predefined handler func capacity that &lt;strong&gt;RobinHood&lt;/strong&gt; used to have.&lt;/p&gt;
+&lt;p&gt;See line &lt;code&gt;45-46&lt;/code&gt;, with just a few lines of change, we made &lt;strong&gt;RobinHood&lt;/strong&gt; more scalable. And that&amp;rsquo;s about it.&lt;/p&gt;
+&lt;h2 id=&#34;bonus&#34;&gt;Bonus&lt;/h2&gt;
+&lt;p&gt;However, there&amp;rsquo;s one more trick I want to show.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/90be7ace5c0fb7f80b98ff60ed21579c.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;We can actually modify the pool of handlers.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve added &lt;strong&gt;AddHandler&lt;/strong&gt;, a way to slot in handler, of course with the similar code, you can remove or modify the sequence of Handlers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; The mutex lock is very important in this.&lt;/p&gt;
+&lt;p&gt;At &lt;code&gt;line 86&lt;/code&gt;, I put in a new handler and request the server 5 times again. Check the results.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/interfaces&#34;&gt;Go by Example - Interface&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/net/http/#Handler&#34;&gt;net/http Handler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Duck_typing&#34;&gt;Duck typing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
+    
     <item>
       <title>Multiplexing fizzbuzz</title>
       <link>https://golang.my/post/fizzbuzz/</link>
       <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
+      
       <guid>https://golang.my/post/fizzbuzz/</guid>
-      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;#34;fizz&amp;#34;, and any number divisible by five with the word &amp;#34;buzz&amp;#34;.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Attention!&lt;/strong&gt; Go Playground operation is single threaded hence output is always in order of the input. Try the code out at your computer for multithread goodness.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.&lt;/p&gt;
+&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;#34;fizz&amp;#34;, and any number divisible by five with the word &amp;#34;buzz&amp;#34;.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Attention!&lt;/strong&gt; Go Playground operation is single threaded hence output is always in order of the input. Try the code out at your computer for multithread goodness.&lt;/p&gt;
+&lt;h3 id=&#34;basic&#34;&gt;Basic&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the basic example,&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/4e0b1d581488c2c22ca4631e28a11115.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/53kVtkPKCn&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As demonstrated above, each loop contains blocking operation of processing and output.&lt;/p&gt;
+&lt;h3 id=&#34;goroutine&#34;&gt;Goroutine&lt;/h3&gt;
+&lt;p&gt;To start applying goroutine, the inner loop operations are moved to a separate function.&lt;/p&gt;
+&lt;p&gt;To invoke a goroutine, simply append a &lt;code&gt;go&lt;/code&gt; keyword in front of the function call.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/0e49f80c8c92eaead339044375c23c26.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/BXB6Eg9fNn&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, we rely on a blocking &lt;code&gt;Sleep&lt;/code&gt; operation to stall the &lt;code&gt;main&lt;/code&gt; from exiting too early. However this is not good idea because we have no idea how long it takes for each processes to finish running.&lt;/p&gt;
+&lt;h3 id=&#34;synchronization&#34;&gt;Synchronization&lt;/h3&gt;
+&lt;h4 id=&#34;synchronization-via-workgroup&#34;&gt;Synchronization via WorkGroup&lt;/h4&gt;
+&lt;p&gt;Although it is possible to do job waiting with channel, it is recommended to use &lt;a href=&#34;https://golang.org/pkg/sync/#WaitGroup&#34;&gt;WaitGroup&lt;/a&gt;&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/680545cafff3018d4daa6e843dcd27c9.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/9HJOVQhFjz&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now, we made sure all goroutine executed before exit.&lt;/p&gt;
+&lt;p&gt;Even though the current code looks good enough, &lt;code&gt;fmt.Println&lt;/code&gt; is actually a io operation.&lt;/p&gt;
+&lt;p&gt;If the write buffer is big enough, you will notice the output is contaminated, ie part of line 1 will have fragment of line 3.&lt;/p&gt;
+&lt;p&gt;To avoid undesirable side effect, we&amp;rsquo;ll apply multiplexing.&lt;/p&gt;
+&lt;h3 id=&#34;multiplex&#34;&gt;Multiplex&lt;/h3&gt;
+&lt;p&gt;Unfortunately, I won&amp;rsquo;t be covering channel here. For the uninitiated, it is a pipe.&lt;/p&gt;
+&lt;p&gt;Read more about channel here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/channels&#34;&gt;Channel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/channel-buffering&#34;&gt;Channel Buffering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/channel-directions&#34;&gt;Channel Direction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The diagram of multiplexing we&amp;rsquo;re going to apply here&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;     inputChan                | 0 | ouputChan
+main ========&amp;gt; fizzbuzzWorker | 1 | ========&amp;gt; printWorker
+                              | 2 |
+                              | 3 |
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The changes for this implement might be a bit drastic&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/6edb0a66a618532b9c411f388fed7b42.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/z0ak0vaHXE&#34;&gt;Playground Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, the last part is declared first, aka in our example the &lt;code&gt;printWorker&lt;/code&gt; and &lt;code&gt;outputChan&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is to assure the worker is consuming the piped message as soon as possible.&lt;/p&gt;
+&lt;p&gt;Since &lt;code&gt;printWorker&lt;/code&gt; is only a single process, we&amp;rsquo;ll be using a channel to signal the conclusion of the goroutine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;printWorker&lt;/code&gt; listen to incoming &lt;code&gt;string&lt;/code&gt; message and print them out on the terminal.&lt;/p&gt;
+&lt;p&gt;Then, we starts n (system core) amount of &lt;code&gt;fizzbuzzWorker&lt;/code&gt; goroutine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fizzbuzzWorker&lt;/code&gt; ingests &lt;code&gt;int&lt;/code&gt; input, and ouput &lt;code&gt;string&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, with all the worker set, we start to feed &lt;code&gt;inputChan&lt;/code&gt;. Once it&amp;rsquo;s finished, we closed &lt;code&gt;inputChan&lt;/code&gt; so our &lt;code&gt;fizzbuzzWorker&lt;/code&gt; knows when there&amp;rsquo;s no more job and exit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;, failed to close a channel will result in a deadlock, the best case is the compiler or runtime throws panic immediately, worst case is the program stucked but still run indefinitely.&lt;/p&gt;
+&lt;p&gt;Next, the program waits for all &lt;code&gt;n&lt;/code&gt; of &lt;code&gt;fizzbuzzWorker&lt;/code&gt; to finish their task, then we&amp;rsquo;ll close &lt;code&gt;outputChan&lt;/code&gt; so &lt;code&gt;printWorker&lt;/code&gt; knows when to stop.&lt;/p&gt;
+&lt;p&gt;Once, &lt;code&gt;printWorker&lt;/code&gt; finished its job, the &lt;code&gt;printDone&lt;/code&gt; is signalled and program is now exited happily.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Fizz_buzz&#34;&gt;Fizz buzz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Multiplexing&#34;&gt;Multiplexing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com&#34;&gt;Go by Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
+    
     <item>
       <title>How to contribute</title>
       <link>https://golang.my/post/contrib-howto/</link>
       <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
+      
       <guid>https://golang.my/post/contrib-howto/</guid>
-      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Install &lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo&lt;/a&gt; or if you have Golang setup,&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; go get -u -v github.com/spf13/hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Clone the project repository.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve obtained permission to write to the repository.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Else you&amp;rsquo;ll have to fork the repository, remember to add &lt;code&gt;--recursive&lt;/code&gt; when checkout.&lt;/p&gt;&#xA;&lt;p&gt;I prefer the fork method. :)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;You can start this to preview the site. Any changes you made will be reflected.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install &lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo&lt;/a&gt; or if you have Golang setup,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; go get -u -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clone the project repository.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve obtained permission to write to the repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Else you&amp;rsquo;ll have to fork the repository, remember to add &lt;code&gt;--recursive&lt;/code&gt; when checkout.&lt;/p&gt;
+&lt;p&gt;I prefer the fork method. :)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can start this to preview the site. Any changes you made will be reflected.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; hugo server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The directory structure, for most the time, you only need to deal with &lt;code&gt;content/post&lt;/code&gt; and &lt;code&gt;static&lt;/code&gt; (if images are involved).&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an output of &lt;code&gt;tree&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; $ tree -L 2
+ .
+ ├── config.toml
+ ├── content
+ │   ├── home
+ │   ├── post
+ │   └── project
+ ├── deploy.sh
+ ├── LICENSE
+ ├── Makefile
+ ├── public
+ ├── README.md
+ ├── static
+ │   └── img
+ └── themes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To create a new post, we&amp;rsquo;ll be using &lt;code&gt;Hugo&lt;/code&gt;&amp;rsquo;s scaffolder.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; hugo new post/&amp;lt;title&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hugo supports &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;Markdown&lt;/a&gt; and also the current theme we&amp;rsquo;re using supports &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To know more, check &lt;a href=&#34;https://golang.my/post/contrib-howto/#resources&#34;&gt;Resources&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After you did all the editing and is satisfied with the results. Commit your changes, push and send us a pull request.
+We&amp;rsquo;ll do the moderation, merge and site generation.&lt;/p&gt;
+&lt;p&gt;To check for changes&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add files to be committed&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git add  &amp;lt;path&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Commit and push your changes&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; git commit
+ git push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thank you for your contribution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;To know more about the toolset and markups.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;Markdown&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/golang-my/golang-my.github.io-hugo/issues&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;This blog post is referenced from &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/exampleSite/content/post/getting-started.md&#34;&gt;https://github.com/gcushen/hugo-academic/blob/master/exampleSite/content/post/getting-started.md&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
+    
   </channel>
 </rss>

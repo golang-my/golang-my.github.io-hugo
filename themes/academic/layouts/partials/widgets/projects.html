@@ -27,8 +27,8 @@
     <div id="container-projects" class="isotope">
       <ul class="fa-ul" style="position: relative">
 
-        {{ range where $.Data.Pages "Type" "project" }}
-        <li class="project-item isotope-item {{ delimit .Params.tags " " }}">
+        {{ range where $.Site.RegularPages "Type" "project" }}
+        <li class="project-item isotope-item {{ with .Params.tags }}{{ delimit . " " }}{{ end }}">
           <span class="project-title">
           {{ if .Content }}
           <a href="{{ .Permalink }}">
@@ -50,14 +50,14 @@
 
     <div id="container-projects" class="row isotope">
 
-      {{ range $project := where $.Data.Pages "Type" "project" }}
+      {{ range $project := where $.Site.RegularPages "Type" "project" }}
       {{ $.Scratch.Set "project_url" $project.Permalink }}
       {{ $.Scratch.Set "target" "" }}
       {{ if $project.Params.external_link }}
       {{   $.Scratch.Set "project_url" $project.Params.external_link }}
       {{   $.Scratch.Set "target" "target=\"_blank\"" }}
       {{ end }}
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 project-item isotope-item {{ delimit .Params.tags " " }}">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 project-item isotope-item {{ with .Params.tags }}{{ delimit . " " }}{{ end }}">
         <div class="card">
           {{ with $project.Params.image_preview }}
           <a href="{{ $.Scratch.Get "project_url" }}" title="" class="card-image hover-overlay"

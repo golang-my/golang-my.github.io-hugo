@@ -1,20 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Roundrobin on Golang Malaysia</title>
     <link>https://golang.my/tags/roundrobin/</link>
     <description>Recent content in Roundrobin on Golang Malaysia</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Tue, 23 Aug 2016 19:32:34 +0800</lastBuildDate>
-    <atom:link href="https://golang.my/tags/roundrobin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://golang.my/tags/roundrobin/" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Easy round robin with net/http</title>
       <link>https://golang.my/post/http_round_robin/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
+      
       <guid>https://golang.my/post/http_round_robin/</guid>
-      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a &lt;a href=&#34;https://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;&#xA;&lt;p&gt;And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;&#xA;&lt;p&gt;So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a &lt;a href=&#34;https://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;
+&lt;p&gt;And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.&lt;/p&gt;
+&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
+&lt;p&gt;So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.&lt;/p&gt;
+&lt;p&gt;We will be creating a program that starts a HTTP server and a client to request the HTTP server, then exit.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/49ee872b2e0c493d6b3d01c641c0f695.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;First, it&amp;rsquo;s very important to know &lt;strong&gt;Server.Handler&lt;/strong&gt; accepts a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;
+&lt;p&gt;So right now we set up a server that respond &lt;strong&gt;Hello, World!&lt;/strong&gt; that runs on &lt;strong&gt;127.0.0.1:9090&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For the following part is just the boilerplate of a HTTP request,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a &lt;strong&gt;Request&lt;/strong&gt; object.&lt;/li&gt;
+&lt;li&gt;Call &lt;strong&gt;Client.Do&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Read the response.&lt;/li&gt;
+&lt;li&gt;Print the response.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Notice I call fatal whenever an error occurs, this is very important.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rule, fail as soon as possible, fail quick and loudly is better than late and silently.&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;custom-handler&#34;&gt;Custom Handler&lt;/h2&gt;
+&lt;p&gt;Now, we&amp;rsquo;re going to create our own &lt;strong&gt;Handler&lt;/strong&gt; so we can perform our tricks later.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/95b4b9ff43659e2de781d552455ec12d.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see, we&amp;rsquo;ve added &lt;strong&gt;RobinHood&lt;/strong&gt;, an empty struct.&lt;/p&gt;
+&lt;p&gt;Since &lt;strong&gt;RobinHood&lt;/strong&gt; implemented ServeHTTP(http.ResponseWriter, *http.Request), it fulfills and qualifies as &lt;strong&gt;Handler&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;basic-load-balancer&#34;&gt;Basic Load Balancer&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s implement our basic round robin &lt;strong&gt;Handler&lt;/strong&gt;&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/188b981402118d8b5c5136c3d08861bc.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see, I&amp;rsquo;ve added several attributes to the &lt;strong&gt;RobinHood&lt;/strong&gt; struct, let&amp;rsquo;s go through&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;counter - keep track of current state to know which handler to call.&lt;/li&gt;
+&lt;li&gt;mu - mutual exclusive lock to maintain integrity of &lt;strong&gt;counter&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;one, two, three - http handler funcs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;ServeHTTP&lt;/strong&gt; for &lt;strong&gt;RobinHood&lt;/strong&gt; is also updated to serve the handler funcs in a round robin manner.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve also put the bootstrapping of &lt;strong&gt;RobinHood&lt;/strong&gt; as the function &lt;strong&gt;newRobinHood&lt;/strong&gt;, just to avoid typing that over and over again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;newHandlerFunc&lt;/strong&gt; is added also to save me from repeating the handler func boilerplate.&lt;/p&gt;
+&lt;p&gt;To demonstrate the working of our basic round robin engine, I&amp;rsquo;m running the the HTTP request in a loop of 5.&lt;/p&gt;
+&lt;p&gt;Run this and you should expect the same output as the included &lt;strong&gt;response.txt&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;chaining-http-handlers&#34;&gt;Chaining HTTP Handlers&lt;/h2&gt;
+&lt;p&gt;Now, instead of hacking and limit ourselves to only 3 handler funcs, we can actually implement a round robin of a list of HTTP Handlers.&lt;/p&gt;
+&lt;p&gt;The changes involved are very small.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/b6899a334466cfc2c81906b0f00a35af.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;I&amp;rsquo;ve removed &lt;strong&gt;one&lt;/strong&gt;, &lt;strong&gt;two&lt;/strong&gt;, &lt;strong&gt;three&lt;/strong&gt;, added &lt;strong&gt;handler&lt;/strong&gt; a slice of &lt;strong&gt;http.Handler&lt;/strong&gt;. Updated the &lt;strong&gt;newRobinHood&lt;/strong&gt; bootstrapper.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;newHandlerFunc&lt;/strong&gt; is also removed and now &lt;strong&gt;newHandler&lt;/strong&gt; is added since we are accepting &lt;strong&gt;Handler&lt;/strong&gt; instead.&lt;/p&gt;
+&lt;p&gt;Now, we are not limited to the predefined handler func capacity that &lt;strong&gt;RobinHood&lt;/strong&gt; used to have.&lt;/p&gt;
+&lt;p&gt;See line &lt;code&gt;45-46&lt;/code&gt;, with just a few lines of change, we made &lt;strong&gt;RobinHood&lt;/strong&gt; more scalable. And that&amp;rsquo;s about it.&lt;/p&gt;
+&lt;h2 id=&#34;bonus&#34;&gt;Bonus&lt;/h2&gt;
+&lt;p&gt;However, there&amp;rsquo;s one more trick I want to show.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/klrkdekira/90be7ace5c0fb7f80b98ff60ed21579c.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;We can actually modify the pool of handlers.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve added &lt;strong&gt;AddHandler&lt;/strong&gt;, a way to slot in handler, of course with the similar code, you can remove or modify the sequence of Handlers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; The mutex lock is very important in this.&lt;/p&gt;
+&lt;p&gt;At &lt;code&gt;line 86&lt;/code&gt;, I put in a new handler and request the server 5 times again. Check the results.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/interfaces&#34;&gt;Go by Example - Interface&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://golang.org/pkg/net/http/#Handler&#34;&gt;net/http Handler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Duck_typing&#34;&gt;Duck typing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
+    
   </channel>
 </rss>
