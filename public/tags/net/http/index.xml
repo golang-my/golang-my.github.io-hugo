@@ -1,29 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Net/Http on Golang Malaysia</title>
     <link>https://golang.my/tags/net/http/</link>
     <description>Recent content in Net/Http on Golang Malaysia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Tue, 23 Aug 2016 19:32:34 +0800</lastBuildDate>
-    
-	<atom:link href="https://golang.my/tags/net/http/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://golang.my/tags/net/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Easy round robin with net/http</title>
       <link>https://golang.my/post/http_round_robin/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
-      
       <guid>https://golang.my/post/http_round_robin/</guid>
-      <description>By Chee Leong
-Introduction Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a net/http.
-I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a Handler interface.
-And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.
-Basic So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a &lt;a href=&#34;https://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;&#xA;&lt;p&gt;And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;&#xA;&lt;p&gt;So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

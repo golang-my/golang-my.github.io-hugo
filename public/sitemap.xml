@@ -1,139 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://golang.my/project/meetup-april-2017/</loc>
-    <lastmod>2017-04-05T18:12:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/project/meetup-october-2016/</loc>
-    <lastmod>2016-10-18T09:06:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/post/http_round_robin/</loc>
-    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/project/meetup-august-2016/</loc>
-    <lastmod>2016-08-14T21:06:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/post/fizzbuzz/</loc>
-    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/post/contrib-howto/</loc>
-    <lastmod>2016-08-12T11:05:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/project/meetup-august-2016-poll/</loc>
-    <lastmod>2016-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/home/about/</loc>
-    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/channel/</loc>
-    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/fizzbuzz/</loc>
-    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/golang/</loc>
-    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://golang.my/</loc>
     <lastmod>2017-04-05T18:12:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/handler/</loc>
-    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/home/</loc>
-    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/howto/</loc>
-    <lastmod>2016-08-12T11:05:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/hugo/</loc>
-    <lastmod>2016-08-12T11:05:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/net/http/</loc>
-    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/post/</loc>
-    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://golang.my/project/meetup-april-2017/</loc>
+    <lastmod>2017-04-05T18:12:07+08:00</lastmod>
+  </url><url>
     <loc>https://golang.my/project/</loc>
     <lastmod>2017-04-05T18:12:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://golang.my/project/meetup-october-2016/</loc>
+    <lastmod>2016-10-18T09:06:48+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/post/http_round_robin/</loc>
+    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/golang/</loc>
+    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/handler/</loc>
+    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/net/http/</loc>
+    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/post/</loc>
+    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
+  </url><url>
     <loc>https://golang.my/tags/roundrobin/</loc>
     <lastmod>2016-08-23T19:32:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://golang.my/tags/</loc>
+    <lastmod>2016-08-23T19:32:34+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/project/meetup-august-2016/</loc>
+    <lastmod>2016-08-14T21:06:48+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/channel/</loc>
+    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/fizzbuzz/</loc>
+    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/post/fizzbuzz/</loc>
+    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
+  </url><url>
     <loc>https://golang.my/tags/routine/</loc>
     <lastmod>2016-08-13T10:42:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://golang.my/tags/</loc>
-    <lastmod>2016-08-13T10:42:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://golang.my/post/contrib-howto/</loc>
+    <lastmod>2016-08-12T11:05:39+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/howto/</loc>
+    <lastmod>2016-08-12T11:05:39+08:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/tags/hugo/</loc>
+    <lastmod>2016-08-12T11:05:39+08:00</lastmod>
+  </url><url>
     <loc>https://golang.my/tags/tutorial/</loc>
     <lastmod>2016-08-12T11:05:39+08:00</lastmod>
-    <priority>0</priority>
+  </url><url>
+    <loc>https://golang.my/project/meetup-august-2016-poll/</loc>
+    <lastmod>2016-08-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/home/about/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/home/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://golang.my/categories/</loc>
   </url>
-  
 </urlset>

@@ -1,55 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Golang Malaysia</title>
     <link>https://golang.my/post/</link>
     <description>Recent content in Posts on Golang Malaysia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Tue, 23 Aug 2016 19:32:34 +0800</lastBuildDate>
-    
-	<atom:link href="https://golang.my/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://golang.my/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Easy round robin with net/http</title>
       <link>https://golang.my/post/http_round_robin/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
-      
       <guid>https://golang.my/post/http_round_robin/</guid>
-      <description>By Chee Leong
-Introduction Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a net/http.
-I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a Handler interface.
-And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.
-Basic So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Golang came bundled with a pretty comprehensive HTTP Standard Library a.k.a &lt;a href=&#34;https://golang.org/pkg/net/http/&#34;&gt;net/http&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m going to show you how to do a simple round robin HTTP server with Golang&amp;rsquo;s Duck Typing a.k.a &lt;strong&gt;Handler&lt;/strong&gt; interface.&lt;/p&gt;&#xA;&lt;p&gt;And because Golang Playground doesn&amp;rsquo;t work well with HTTP server, I&amp;rsquo;m not going to provide the link, so you have to download the script and run it yourself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;&#xA;&lt;p&gt;So, let&amp;rsquo;s start with the boilerplate we&amp;rsquo;re going to use for the rest of the guide.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Multiplexing fizzbuzz</title>
       <link>https://golang.my/post/fizzbuzz/</link>
       <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
-      
       <guid>https://golang.my/post/fizzbuzz/</guid>
-      <description>By Chee Leong
-I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.
-Definition Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;quot;fizz&amp;quot;, and any number divisible by five with the word &amp;quot;buzz&amp;quot;.  Attention! Go Playground operation is single threaded hence output is always in order of the input.</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;#34;fizz&amp;#34;, and any number divisible by five with the word &amp;#34;buzz&amp;#34;.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Attention!&lt;/strong&gt; Go Playground operation is single threaded hence output is always in order of the input. Try the code out at your computer for multithread goodness.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to contribute</title>
       <link>https://golang.my/post/contrib-howto/</link>
       <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
-      
       <guid>https://golang.my/post/contrib-howto/</guid>
-      <description>By Chee Leong
-Installation  Install Hugo or if you have Golang setup,
-go get -u -v github.com/spf13/hugo  Clone the project repository.
-If you&amp;rsquo;ve obtained permission to write to the repository.
-git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.
-I prefer the fork method. :)
- You can start this to preview the site. Any changes you made will be reflected.</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Install &lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo&lt;/a&gt; or if you have Golang setup,&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; go get -u -v github.com/spf13/hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Clone the project repository.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve obtained permission to write to the repository.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Else you&amp;rsquo;ll have to fork the repository, remember to add &lt;code&gt;--recursive&lt;/code&gt; when checkout.&lt;/p&gt;&#xA;&lt;p&gt;I prefer the fork method. :)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;You can start this to preview the site. Any changes you made will be reflected.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

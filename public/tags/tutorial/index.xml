@@ -1,31 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorial on Golang Malaysia</title>
     <link>https://golang.my/tags/tutorial/</link>
     <description>Recent content in Tutorial on Golang Malaysia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Fri, 12 Aug 2016 11:05:39 +0800</lastBuildDate>
-    
-	<atom:link href="https://golang.my/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://golang.my/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to contribute</title>
       <link>https://golang.my/post/contrib-howto/</link>
       <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
-      
       <guid>https://golang.my/post/contrib-howto/</guid>
-      <description>By Chee Leong
-Installation  Install Hugo or if you have Golang setup,
-go get -u -v github.com/spf13/hugo  Clone the project repository.
-If you&amp;rsquo;ve obtained permission to write to the repository.
-git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git  Else you&amp;rsquo;ll have to fork the repository, remember to add --recursive when checkout.
-I prefer the fork method. :)
- You can start this to preview the site. Any changes you made will be reflected.</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Install &lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo&lt;/a&gt; or if you have Golang setup,&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; go get -u -v github.com/spf13/hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Clone the project repository.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve obtained permission to write to the repository.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt; git clone --recursive git@github.com:golang-my/golang-my.github.io-hugo.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Else you&amp;rsquo;ll have to fork the repository, remember to add &lt;code&gt;--recursive&lt;/code&gt; when checkout.&lt;/p&gt;&#xA;&lt;p&gt;I prefer the fork method. :)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;You can start this to preview the site. Any changes you made will be reflected.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

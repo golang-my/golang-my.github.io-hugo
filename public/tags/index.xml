@@ -1,106 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Golang Malaysia</title>
     <link>https://golang.my/tags/</link>
     <description>Recent content in Tags on Golang Malaysia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
-    <lastBuildDate>Sat, 13 Aug 2016 10:42:53 +0800</lastBuildDate>
-    
-	<atom:link href="https://golang.my/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Channel</title>
-      <link>https://golang.my/tags/channel/</link>
-      <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
-      
-      <guid>https://golang.my/tags/channel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fizzbuzz</title>
-      <link>https://golang.my/tags/fizzbuzz/</link>
-      <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
-      
-      <guid>https://golang.my/tags/fizzbuzz/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Tue, 23 Aug 2016 19:32:34 +0800</lastBuildDate>
+    <atom:link href="https://golang.my/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://golang.my/tags/golang/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
-      
       <guid>https://golang.my/tags/golang/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Handler</title>
       <link>https://golang.my/tags/handler/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
-      
       <guid>https://golang.my/tags/handler/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>Howto</title>
-      <link>https://golang.my/tags/howto/</link>
-      <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
-      
-      <guid>https://golang.my/tags/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://golang.my/tags/hugo/</link>
-      <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
-      
-      <guid>https://golang.my/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Net/Http</title>
       <link>https://golang.my/tags/net/http/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
-      
       <guid>https://golang.my/tags/net/http/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Roundrobin</title>
       <link>https://golang.my/tags/roundrobin/</link>
       <pubDate>Tue, 23 Aug 2016 19:32:34 +0800</pubDate>
-      
       <guid>https://golang.my/tags/roundrobin/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Channel</title>
+      <link>https://golang.my/tags/channel/</link>
+      <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
+      <guid>https://golang.my/tags/channel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fizzbuzz</title>
+      <link>https://golang.my/tags/fizzbuzz/</link>
+      <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
+      <guid>https://golang.my/tags/fizzbuzz/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Routine</title>
       <link>https://golang.my/tags/routine/</link>
       <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
-      
       <guid>https://golang.my/tags/routine/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Howto</title>
+      <link>https://golang.my/tags/howto/</link>
+      <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
+      <guid>https://golang.my/tags/howto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://golang.my/tags/hugo/</link>
+      <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
+      <guid>https://golang.my/tags/hugo/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Tutorial</title>
       <link>https://golang.my/tags/tutorial/</link>
       <pubDate>Fri, 12 Aug 2016 11:05:39 +0800</pubDate>
-      
       <guid>https://golang.my/tags/tutorial/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

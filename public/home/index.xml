@@ -1,30 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Golang Malaysia</title>
     <link>https://golang.my/home/</link>
     <description>Recent content in Homes on Golang Malaysia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://golang.my/home/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://golang.my/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
       <link>https://golang.my/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://golang.my/home/about/</guid>
-      <description>Welcome Most discussions are happening on the Facebook Group. The intention of this site is to collect knowledge sharing via blog posts.
-Current Agenda We&amp;rsquo;re trying to host a meetup at least once a month on the last Tuesday.
-Community driven Anybody can contribute to this site. Just check out and submit us your pull request.
-The repository is at https://github.com/golang-my/golang-my.github.io-hugo.
-How to contribute.
-Telegram Group Join our telegram group Golang Malaysia for discussions and latest updates on the meetups.</description>
+      <description>&lt;h1 id=&#34;welcome&#34;&gt;Welcome&lt;/h1&gt;&#xA;&lt;p&gt;Most discussions are happening on the &lt;a href=&#34;https://www.facebook.com/groups/mygolang/&#34;&gt;Facebook Group&lt;/a&gt;. The intention of this site is to collect knowledge sharing via blog posts.&lt;/p&gt;&#xA;&lt;h3 id=&#34;current-agenda&#34;&gt;Current Agenda&lt;/h3&gt;&#xA;&lt;p&gt;We&amp;rsquo;re trying to host a meetup at least once a month on the last Tuesday.&lt;/p&gt;&#xA;&lt;h3 id=&#34;community-driven&#34;&gt;Community driven&lt;/h3&gt;&#xA;&lt;p&gt;Anybody can contribute to this site. Just check out and submit us your pull request.&lt;/p&gt;&#xA;&lt;p&gt;The repository is at &lt;a href=&#34;https://github.com/golang-my/golang-my.github.io-hugo&#34;&gt;https://github.com/golang-my/golang-my.github.io-hugo&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://golang.my/post/contrib-howto/&#34;&gt;How to contribute&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;telegram-group&#34;&gt;Telegram Group&lt;/h3&gt;&#xA;&lt;p&gt;Join our telegram group &lt;a href=&#34;https://t.me/joinchat/AAAAAD_0LOtBImDV8gn0jA&#34;&gt;Golang Malaysia&lt;/a&gt; for discussions and latest updates on the meetups.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

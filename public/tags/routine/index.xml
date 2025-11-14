@@ -1,27 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Routine on Golang Malaysia</title>
     <link>https://golang.my/tags/routine/</link>
     <description>Recent content in Routine on Golang Malaysia</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyleft 2017 Malaysian Golang User Group</copyright>
     <lastBuildDate>Sat, 13 Aug 2016 10:42:53 +0800</lastBuildDate>
-    
-	<atom:link href="https://golang.my/tags/routine/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://golang.my/tags/routine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multiplexing fizzbuzz</title>
       <link>https://golang.my/post/fizzbuzz/</link>
       <pubDate>Sat, 13 Aug 2016 10:42:53 +0800</pubDate>
-      
       <guid>https://golang.my/post/fizzbuzz/</guid>
-      <description>By Chee Leong
-I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.
-Definition Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;quot;fizz&amp;quot;, and any number divisible by five with the word &amp;quot;buzz&amp;quot;.  Attention! Go Playground operation is single threaded hence output is always in order of the input.</description>
+      <description>&lt;p&gt;By &lt;a href=&#34;https://github.com/klrkdekira&#34;&gt;Chee Leong&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m trying to show the common pattern of multiplexing via gochannel and goroutine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word &amp;#34;fizz&amp;#34;, and any number divisible by five with the word &amp;#34;buzz&amp;#34;.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Attention!&lt;/strong&gt; Go Playground operation is single threaded hence output is always in order of the input. Try the code out at your computer for multithread goodness.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
